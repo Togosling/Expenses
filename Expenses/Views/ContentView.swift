@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
     var body: some View {
@@ -15,6 +16,9 @@ struct ContentView: View {
                     Text("Overview")
                         .font(.title2)
                         .bold()
+                    
+                    LineChartView(data: [8,2,4,6,12,9,2], title: "900$", style: ChartStyle(backgroundColor: Color(uiColor: .systemBackground), accentColor: .primary, gradientColor: GradientColor(start: Color.icon.opacity(0.4), end: Color.icon), textColor: .primary, legendTextColor: .primary, dropShadowColor: .primary))
+                        .frame(height: 300)
                     
                     RecentTransactionList()
                 }
@@ -31,6 +35,7 @@ struct ContentView: View {
                 }
             }
         }
+        .tint(.primary)
     }
 }
 

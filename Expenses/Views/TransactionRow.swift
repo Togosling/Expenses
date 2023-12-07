@@ -32,7 +32,7 @@ struct TransactionRow: View {
                     .opacity(0.7)
                     .lineLimit(1)
                 
-                Text(transaction.date)
+                Text(transaction.dateParsed, style: .date)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)

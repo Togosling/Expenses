@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUIFontIcon
 
 
 struct TransactionModel: Identifiable, Decodable, Hashable {
@@ -26,6 +25,14 @@ struct TransactionModel: Identifiable, Decodable, Hashable {
     
     var signedAmount: Double {
         return type == TransactionType.credit.rawValue ? amount : -amount
+    }
+    
+    var dateParsed: Date {
+        date.dateParsed()
+    }
+    
+    var month: String {
+        dateParsed.formatted(.dateTime.year().month(.wide))
     }
 }
 

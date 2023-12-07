@@ -35,7 +35,6 @@ class TransactionService {
                     print("Failed fetching transactions \(error.localizedDescription)")
                 }
             } receiveValue: { transactions in
-                print(transactions)
                 completion(transactions)
             }
             .store(in: &cancellables)
